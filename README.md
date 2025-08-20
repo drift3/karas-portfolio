@@ -1,8 +1,8 @@
-# Karas Wael - Creative Developer Portfolio
+# Karas Wael - Web Developer & Content Creator Portfolio
 
 A modern, creative, and professional personal portfolio website built with React, TypeScript, and Tailwind CSS. Features smooth animations, responsive design, and a unique visual experience.
 
-## 🚀 Features
+## Features
 
 - **Modern Design**: Clean, professional layout with creative elements
 - **Smooth Animations**: Powered by Framer Motion for premium feel
@@ -12,7 +12,7 @@ A modern, creative, and professional personal portfolio website built with React
 - **Contact Form**: Functional contact form with floating labels
 - **Social Integration**: Links to GitHub, YouTube, and Linktree
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **React 19** with TypeScript
 - **Tailwind CSS** for styling
@@ -27,7 +27,7 @@ A modern, creative, and professional personal portfolio website built with React
 3. **Projects**: Portfolio showcase with filtering and hover effects
 4. **Contact**: Contact form and social links
 
-## 🎨 Design Features
+##  Design Features
 
 - **Dark Theme**: Modern dark background with vibrant accents
 - **Gradient Text**: Beautiful gradient text effects
@@ -35,49 +35,20 @@ A modern, creative, and professional personal portfolio website built with React
 - **Floating Elements**: Animated background elements
 - **Smooth Transitions**: Page transitions and hover animations
 
-## 🚀 Getting Started
 
-### Prerequisites
 
-- Node.js (v14 or higher)
-- npm or yarn
 
-### Installation
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd karas-personal-site
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm start
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-## 📞 Contact Information
+##  Contact Information
 
 - **Email**: karaswaelzaki@gmail.com
 - **Phone**: +20 122 080 9951
 - **YouTube**: [https://youtube.com/@karas-tech](https://youtube.com/@karas-tech)
 - **Linktree**: [https://linktr.ee/karas_wael](https://linktr.ee/karas_wael)
 
-## 🎯 About Karas Wael
+##  About Karas Wael
 
-Karas Wael is a passionate web developer, logo designer, and content creator. He specializes in:
+Karas Wael is a passionate web developer and content creator. He specializes in:
 
 - **Web Development**: HTML, CSS, JavaScript, React
 <!-- - **Logo Design**: Brand identity and visual design -->
@@ -88,7 +59,7 @@ Karas Wael is a passionate web developer, logo designer, and content creator. He
 
 This project is created for Karas Wael's personal portfolio.
 
-## 🤝 Contributing
+##  Contributing
 
 This is a personal portfolio project. For suggestions or improvements, please contact Karas Wael directly.
 
