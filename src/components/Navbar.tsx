@@ -41,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               onClick={() => scrollToSection('home')}
             >
               <img
-                src="/karasLogo.jpg"
+                src={`${process.env.PUBLIC_URL}/karasLogo.jpg`}
                 alt="Karas Logo"
                 className="h-8 w-8 md:h-10 md:w-10 rounded-full object-cover"
               />

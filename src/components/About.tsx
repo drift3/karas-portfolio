@@ -55,7 +55,7 @@ const About: React.FC = () => {
               <div className="relative bg-gray-800 rounded-2xl p-8 glass-effect">
                 <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-teal-400 to-purple-600 p-1">
                   <img
-                    src="/karasLogo.jpg"
+                    src={`${process.env.PUBLIC_URL}/karasLogo.jpg`}
                     alt="Karas Logo"
                     className="w-full h-full rounded-full object-cover"
                   />
