@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/karas-portfolio/static/css/main.c8ebde26.css",
+    "main.js": "/karas-portfolio/static/js/main.3d8af563.js",
+    "index.html": "/karas-portfolio/index.html",
+    "main.c8ebde26.css.map": "/karas-portfolio/static/css/main.c8ebde26.css.map",
+    "main.3d8af563.js.map": "/karas-portfolio/static/js/main.3d8af563.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c8ebde26.css",
+    "static/js/main.3d8af563.js"
+  ]
+}
