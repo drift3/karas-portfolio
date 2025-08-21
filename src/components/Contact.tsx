@@ -124,6 +124,7 @@ const Contact: React.FC = () => {
               <div className="grid gap-4 md:grid-cols-2 md:gap-6">
                 <div className="relative">
                   <input
+                    id="name"
                     type="text"
                     name="name"
                     value={formData.name}
@@ -132,13 +133,17 @@ const Contact: React.FC = () => {
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-teal-400 focus:outline-none transition-colors peer placeholder-transparent"
                     placeholder="Your Name"
                   />
-                  <label className="absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1">
+                  <label
+                    htmlFor="name"
+                    className="pointer-events-none absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1"
+                  >
                     Your Name
                   </label>
                 </div>
 
                 <div className="relative">
                   <input
+                    id="email"
                     type="email"
                     name="email"
                     value={formData.email}
@@ -147,7 +152,10 @@ const Contact: React.FC = () => {
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-teal-400 focus:outline-none transition-colors peer placeholder-transparent"
                     placeholder="Your Email"
                   />
-                  <label className="absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1">
+                  <label
+                    htmlFor="email"
+                    className="pointer-events-none absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1"
+                  >
                     Your Email
                   </label>
                 </div>
@@ -155,6 +163,7 @@ const Contact: React.FC = () => {
 
               <div className="relative">
                 <input
+                  id="subject"
                   type="text"
                   name="subject"
                   value={formData.subject}
@@ -163,13 +172,17 @@ const Contact: React.FC = () => {
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-teal-400 focus:outline-none transition-colors peer placeholder-transparent"
                   placeholder="Subject"
                 />
-                <label className="absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1">
+                <label
+                  htmlFor="subject"
+                  className="pointer-events-none absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1"
+                >
                   Subject
                 </label>
               </div>
 
               <div className="relative">
                 <textarea
+                  id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
@@ -178,7 +191,10 @@ const Contact: React.FC = () => {
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-teal-400 focus:outline-none transition-colors peer placeholder-transparent resize-none"
                   placeholder="Your Message"
                 />
-                <label className="absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1">
+                <label
+                  htmlFor="message"
+                  className="pointer-events-none absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1"
+                >
                   Your Message
                 </label>
               </div>
