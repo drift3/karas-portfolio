@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/karas-portfolio/static/css/main.c8ebde26.css",
-    "main.js": "/karas-portfolio/static/js/main.6cbda6bd.js",
+    "main.css": "/karas-portfolio/static/css/main.67c90796.css",
+    "main.js": "/karas-portfolio/static/js/main.6e2baad4.js",
     "index.html": "/karas-portfolio/index.html",
-    "main.c8ebde26.css.map": "/karas-portfolio/static/css/main.c8ebde26.css.map",
-    "main.6cbda6bd.js.map": "/karas-portfolio/static/js/main.6cbda6bd.js.map"
+    "main.67c90796.css.map": "/karas-portfolio/static/css/main.67c90796.css.map",
+    "main.6e2baad4.js.map": "/karas-portfolio/static/js/main.6e2baad4.js.map"
   },
   "entrypoints": [
-    "static/css/main.c8ebde26.css",
-    "static/js/main.6cbda6bd.js"
+    "static/css/main.67c90796.css",
+    "static/js/main.6e2baad4.js"
   ]
 }
