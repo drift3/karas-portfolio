@@ -34,19 +34,9 @@ const Contact: React.FC = () => {
       formData.message,
     ].join('\n');
 
-    // Prefer Gmail compose; let the browser navigate (avoids popup blockers)
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    // If user is logged into Gmail in the browser, this opens compose; otherwise fallback to mailto
-    window.location.href = gmailUrl;
-
-    // As a safety net, schedule a fallback to mailto if Gmail didn't load (e.g., blocked or offline)
-    setTimeout(() => {
-      if (document.visibilityState === 'visible') {
-        window.location.href = mailto;
-      }
-    }, 1200);
+    window.location.href = mailto;
 
     setSubmitStatus('success');
     setFormData({ name: '', email: '', subject: '', message: '' });
