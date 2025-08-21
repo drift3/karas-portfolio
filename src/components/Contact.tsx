@@ -135,7 +135,7 @@ const Contact: React.FC = () => {
                   />
                   <label
                     htmlFor="name"
-                    className="pointer-events-none absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1"
+                    className="absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1"
                   >
                     Your Name
                   </label>
@@ -154,7 +154,7 @@ const Contact: React.FC = () => {
                   />
                   <label
                     htmlFor="email"
-                    className="pointer-events-none absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1"
+                    className="absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1"
                   >
                     Your Email
                   </label>
@@ -174,7 +174,7 @@ const Contact: React.FC = () => {
                 />
                 <label
                   htmlFor="subject"
-                  className="pointer-events-none absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1"
+                  className="absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1"
                 >
                   Subject
                 </label>
@@ -193,7 +193,7 @@ const Contact: React.FC = () => {
                 />
                 <label
                   htmlFor="message"
-                  className="pointer-events-none absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1"
+                  className="absolute left-4 -top-2.5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-teal-400 bg-gray-900 px-1"
                 >
                   Your Message
                 </label>
