@@ -22,20 +22,25 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Open default mail client (Gmail/webmail if configured) with prefilled content
+
     const to = 'karaswaelzaki@gmail.com';
     const subject = formData.subject || 'New message from portfolio';
-    const bodyLines = [
+    const body = [
       `Name: ${formData.name}`,
       `Email: ${formData.email}`,
       '',
       formData.message,
-    ];
-    const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+    ].join('\n');
 
-    window.location.href = mailto;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    // Optional UI feedback
+    // Try Gmail compose in a new tab; fallback to mailto if blocked
+    const win = window.open(gmailUrl, '_blank');
+    if (!win || win.closed || typeof win.closed === 'undefined') {
+      window.location.href = mailto;
+    }
+
     setSubmitStatus('success');
     setFormData({ name: '', email: '', subject: '', message: '' });
     setTimeout(() => setSubmitStatus('idle'), 2500);
