@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Github, Youtube, ExternalLink, MessageCircle } from 'lucide-react';
 
@@ -20,6 +20,8 @@ const Contact: React.FC = () => {
     }));
   };
 
+  const formRef = useRef<HTMLFormElement | null>(null);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -32,14 +34,19 @@ const Contact: React.FC = () => {
       formData.message,
     ].join('\n');
 
+    // Prefer Gmail compose; let the browser navigate (avoids popup blockers)
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    // Try Gmail compose in a new tab; fallback to mailto if blocked
-    const win = window.open(gmailUrl, '_blank');
-    if (!win || win.closed || typeof win.closed === 'undefined') {
-      window.location.href = mailto;
-    }
+    // If user is logged into Gmail in the browser, this opens compose; otherwise fallback to mailto
+    window.location.href = gmailUrl;
+
+    // As a safety net, schedule a fallback to mailto if Gmail didn't load (e.g., blocked or offline)
+    setTimeout(() => {
+      if (document.visibilityState === 'visible') {
+        window.location.href = mailto;
+      }
+    }, 1200);
 
     setSubmitStatus('success');
     setFormData({ name: '', email: '', subject: '', message: '' });
