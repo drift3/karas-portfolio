@@ -20,40 +20,25 @@ const Contact: React.FC = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Submit to Formspree (client-side)
-    try {
-      setIsSubmitting(true);
-      const endpoint = process.env.REACT_APP_FORMSPREE_ENDPOINT; // e.g. https://formspree.io/f/xxxxxx
-      if (!endpoint) {
-        throw new Error('Missing REACT_APP_FORMSPREE_ENDPOINT');
-      }
+    // Open default mail client (Gmail/webmail if configured) with prefilled content
+    const to = 'karaswaelzaki@gmail.com';
+    const subject = formData.subject || 'New message from portfolio';
+    const bodyLines = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      '',
+      formData.message,
+    ];
+    const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
 
-      const payload = {
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-      } as const;
+    window.location.href = mailto;
 
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) throw new Error(`Form submit failed: ${res.status}`);
-
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (err) {
-      console.error(err);
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus('idle'), 3500);
-    }
+    // Optional UI feedback
+    setSubmitStatus('success');
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setTimeout(() => setSubmitStatus('idle'), 2500);
   };
 
   const contactInfo = [
