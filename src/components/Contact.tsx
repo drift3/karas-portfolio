@@ -20,19 +20,40 @@ const Contact: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Build a mailto link that opens the user's email client
-    const to = 'karaswaelzaki@gmail.com';
-    const subject = formData.subject || `New message from ${formData.name}`;
-    const bodyLines = [
-      `Name: ${formData.name}`,
-      `Email: ${formData.email}`,
-      '',
-      formData.message,
-    ];
-    const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
-    window.location.href = mailto;
+    // Submit to Formspree (client-side)
+    try {
+      setIsSubmitting(true);
+      const endpoint = process.env.REACT_APP_FORMSPREE_ENDPOINT; // e.g. https://formspree.io/f/xxxxxx
+      if (!endpoint) {
+        throw new Error('Missing REACT_APP_FORMSPREE_ENDPOINT');
+      }
+
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      } as const;
+
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error(`Form submit failed: ${res.status}`);
+
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (err) {
+      console.error(err);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus('idle'), 3500);
+    }
   };
 
   const contactInfo = [
@@ -199,6 +220,8 @@ const Contact: React.FC = () => {
                   </>
                 ) : submitStatus === 'success' ? (
                   <span>Message Sent! ✓</span>
+                ) : submitStatus === 'error' ? (
+                  <span>Failed to send. Try again.</span>
                 ) : (
                   <>
                     <Send size={20} />
