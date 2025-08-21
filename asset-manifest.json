@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/karas-portfolio/static/css/main.c8ebde26.css",
-    "main.js": "/karas-portfolio/static/js/main.79567a43.js",
+    "main.js": "/karas-portfolio/static/js/main.9309fff5.js",
     "index.html": "/karas-portfolio/index.html",
     "main.c8ebde26.css.map": "/karas-portfolio/static/css/main.c8ebde26.css.map",
-    "main.79567a43.js.map": "/karas-portfolio/static/js/main.79567a43.js.map"
+    "main.9309fff5.js.map": "/karas-portfolio/static/js/main.9309fff5.js.map"
   },
   "entrypoints": [
     "static/css/main.c8ebde26.css",
-    "static/js/main.79567a43.js"
+    "static/js/main.9309fff5.js"
   ]
 }
